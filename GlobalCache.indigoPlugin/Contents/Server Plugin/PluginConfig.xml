@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<PluginConfig>
+
+	<Field id="infoLabel" type="label">
+		<Label>Global Cache Plugin                                      Developed by Chris Baltas</Label>
+	</Field>	
+    <Field id="simpleSeparator1" type="separator"/>
+
+	<Field id="instructions" type="label">
+		<Label>In order to use this plugin, make sure you add one Global Cache Unit device and one or more GC IR/Relay Module devices.</Label>
+	</Field>	
+	
+	<Field id="simpleSeparator2" type="separator"/>
+	<Field type="checkbox" id="showDebugInfo">
+		<Label>Enable debuging:</Label>
+		<Description>(not recommended)</Description>
+	</Field>
+    
+</PluginConfig>

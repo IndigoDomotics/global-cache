@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Actions>
+	<Action id="sendIR" deviceFilter="self.gcIRModule">
+		<Name>Send IR Commands</Name>
+		<CallbackMethod>sendIRtoGC</CallbackMethod>
+		<ConfigUI>
+			<Field id="completeID" type="textfield" defaultValue="1">
+				<Label>ID:</Label>
+				<Description>Optional. Used when completeir is received</Description>
+			</Field>			
+			<Field id="frequency" type="textfield" defaultValue="">
+				<Label>Frequency:</Label>
+				<Description>Enter an integer from 20000 to 250000</Description>
+			</Field>
+			<Field id="count" type="textfield" defaultValue="">
+				<Label>Count:</Label>
+				<Description>the IR command is sent [count] times (0-31)</Description>
+			</Field>
+			<Field id="offset" type="textfield" defaultValue="1">
+				<Label>Offset:</Label>
+				<Description>used if [count] is greater than 1 (1-511)</Description>
+			</Field>
+			<Field id="irString" type="textfield" defaultValue="">
+				<Label>GC IR string:</Label>
+				<Description>Must be in GC format. i.e 34,48,24,12,24,960</Description>
+			</Field>
+		</ConfigUI>
+	</Action>
+	<Action id="setRelayState" deviceFilter="self.gcRelayModule">
+		<Name>Relay State</Name>
+		<CallbackMethod>setGCRelayState</CallbackMethod>
+		<ConfigUI>
+			<Field type="menu" id="relayState" defaultValue="1">
+				<Label>Set relay state:</Label>
+				<List>
+					<Option value="1">On</Option>
+					<Option value="0">Off</Option>
+				</List>
+			</Field>
+		</ConfigUI>		
+	</Action>	
+</Actions>

@@ -1,0 +1,137 @@
+<?xml version="1.0"?>
+<Devices>
+	<Device type="custom" id="gcDevice">
+		<Name>Global Cache Unit</Name>
+		<ConfigUI>			
+			<Field id="address" type="textfield">
+				<Label>Enter the IP address:</Label>
+			</Field>
+			<Field id="space0" type="label">
+				<Label></Label>
+			</Field>
+			<Field id="portNumber" type="textfield">
+				<Label>Enter the port number:</Label>
+			</Field>
+		</ConfigUI>
+		<States>
+			<State id="connectionState">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Connection State</TriggerLabel>
+				<ControlPageLabel>Connection State</ControlPageLabel>
+			</State>
+			<State id="moduleAddress1">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Module Address 1</TriggerLabel>
+				<ControlPageLabel>Module Address 1</ControlPageLabel>
+			</State>
+			<State id="moduleAddress2">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Module Address 2</TriggerLabel>
+				<ControlPageLabel>Module Address 2</ControlPageLabel>
+			</State>
+			<State id="moduleAddress3">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Module Address 3</TriggerLabel>
+				<ControlPageLabel>Module Address 3</ControlPageLabel>
+			</State>
+			<State id="moduleAddress4">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Module Address 4</TriggerLabel>
+				<ControlPageLabel>Module Address 4</ControlPageLabel>
+			</State>
+			<State id="moduleAddress5">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Module Address 5</TriggerLabel>
+				<ControlPageLabel>Module Address 5</ControlPageLabel>
+			</State>							
+		</States>
+		<UiDisplayStateId>connectionState</UiDisplayStateId>
+	</Device>
+	<Device type="custom" id="gcIRModule">
+		<Name>GC IR Module</Name>
+		<ConfigUI>
+			<Field id="irGCDevice" type="menu">
+				<Label>Select the Global Cache Device:</Label>
+				<List class="indigo.devices" filter="self.gcDevice"/>
+			</Field>
+			<Field id="space0" type="label">
+				<Label></Label>
+			</Field>
+			<Field id="irModuleAddress" type="menu">
+				<Label>Select the module address:</Label>
+				<List class="self" method="getIRModuleList"/>
+			</Field>
+			<Field id="space1" type="label">
+				<Label></Label>
+			</Field>
+			<Field id="irPortNumber" type="menu">
+				<Label>Select the port number:</Label>
+				<List class="self" method="getIRPortList"/>
+			</Field>
+			<Field type="checkbox" id="irModuleLogChanges" defaultValue="1">
+				<Label>Log Changes:</Label>
+				<Description></Description>
+			</Field> 
+		</ConfigUI>
+		<States>
+			<State id="deviceState">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Connection State</TriggerLabel>
+				<ControlPageLabel>Connection State</ControlPageLabel>
+			</State>		
+			<State id="irLastAck">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Last IR Acknowledgement</TriggerLabel>
+				<ControlPageLabel>Last IR Acknowledgment Received</ControlPageLabel>
+			</State>
+		</States>
+		<UiDisplayStateId>deviceState</UiDisplayStateId>		
+	</Device>
+	<Device type="custom" id="gcRelayModule">
+		<Name>GC Relay Module</Name>
+		<ConfigUI>
+			<Field id="relayGCDevice" type="menu">
+				<Label>Select the Global Cache Device:</Label>
+				<List class="indigo.devices" filter="self.gcDevice"/>
+			</Field>		
+			<Field id="relayModuleAddress" type="menu">
+				<Label>Module Address:</Label>
+				<List class="self" method="getRelayModuleList"/>
+			</Field>
+			<Field id="space1" type="label">
+				<Label></Label>
+			</Field>
+			<Field id="relayNumber" type="menu">
+				<Label>Select the relay number:</Label>
+				<List class="self" method="getRelayList"/>
+			</Field>			
+			<Field id="space0" type="label">
+				<Label></Label>
+			</Field>
+            <Field type="checkbox" id="relayModuleLogChanges" defaultValue="1">
+				<Label>Log Changes:</Label>
+				<Description></Description>
+			</Field> 
+		</ConfigUI>
+		<States>
+			<State id="relayState">
+				<ValueType>
+					<List>
+						<Option value="on">On</Option>
+						<Option value="off">Off</Option>
+					</List>
+				</ValueType>
+				<TriggerLabel>Relay State Changed</TriggerLabel>
+				<TriggerLabelPrefix>Relay State Changed to</TriggerLabelPrefix>
+				<ControlPageLabel>Relay State</ControlPageLabel>
+				<ControlPageLabelPrefix>Relay State is</ControlPageLabelPrefix>
+			</State>
+			<State id="relayLastAck">
+				<ValueType>String</ValueType>
+				<TriggerLabel>Last Relay Acknowledgement</TriggerLabel>
+				<ControlPageLabel>Last Relay Acknowledgment Received</ControlPageLabel>
+			</State>			
+		</States>
+		<UiDisplayStateId>relayState</UiDisplayStateId>
+	</Device>     
+</Devices>
