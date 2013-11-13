@@ -1,6 +1,6 @@
 #Global Cache Plugin
 
-This plugin allows you to use Global Cache devices. It hasn't been updated in a while since most users are using [Cynical Caché]("http://www.cynic.org/indigo/plugins/online/gcnet.html") instead but is included here in case someone wants to use the source for any reason.
+This plugin allows you to use Global Cache devices. It hasn't been updated in a while since most users are using Cynical Caché (http://www.cynic.org/indigo/plugins/online/gcnet.html) instead (it's supported by the developer) but is included here in case someone wants to use the source for any reason.
 
 This plugin was originally developed by Chris Baltas who has given us permission to open-source the plugin for the community.
 
